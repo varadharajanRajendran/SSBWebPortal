@@ -1,0 +1,15 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+CREATE PROCEDURE [dbo].[SSB_Web_GetEntryStatus]
+		 @OrderID	nvarchar(50)	,
+		 @EntryID	nvarchar(255)	
+AS
+
+SELECT	ETRY_STAT_ID 
+FROM SitMesDb.dbo.MDSPOM_ETRY 
+WHERE ETRY_TYP_ID= @EntryID 
+	AND ORDR_ID=@OrderID
+GO
